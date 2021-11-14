@@ -1,0 +1,9 @@
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\menfra\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\menfra\\.nuget\\packages"
+    ]
+  }
+}
