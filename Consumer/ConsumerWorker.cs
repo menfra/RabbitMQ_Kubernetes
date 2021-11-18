@@ -1,10 +1,7 @@
-﻿using DataAccess;
-using DataAccess.DataModels;
+﻿using DataAccess.DataModels;
+using DataAccess.DataServices;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Consumer
 {

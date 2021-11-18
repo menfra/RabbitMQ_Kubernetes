@@ -1,9 +1,8 @@
-﻿using DataAccess;
-using DataAccess.DataModels;
+﻿using DataAccess.DataModels;
+using DataAccess.DataServices;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Consumer.Controllers
@@ -21,7 +20,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await DataServices.GetInstance.GetAllData<User>("");
+                return await MongoDataServices.GetInstance.GetAllData<User>("");
             }
             catch (Exception)
             {
@@ -41,7 +40,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await DataServices.GetInstance.GetDataByID<User>("", id);
+                return await MongoDataServices.GetInstance.GetDataByID<User>("", id);
             }
             catch (Exception)
             {
@@ -60,7 +59,8 @@ namespace Consumer.Controllers
         {
             try
             {
-                return Created("User created succesfully", await DataServices.GetInstance.AddData("", user));
+                MongoDataServices.GetInstance.AddData("", user);
+                return Created("User created succesfully", user);
             }
             catch (Exception)
             {
@@ -80,7 +80,8 @@ namespace Consumer.Controllers
         {
             try
             {
-                return Created("User updated succesfully", await DataServices.GetInstance.UpdateData("", user));
+                MongoDataServices.GetInstance.UpSertData("", Guid.NewGuid(), user);
+                return Created("User updated succesfully", user);
             }
             catch (Exception)
             {
@@ -100,11 +101,9 @@ namespace Consumer.Controllers
         {
             try
             {
-                var IsDeleted = await DataServices.GetInstance.DeleteData<User>("", id);
-                if (IsDeleted)
-                    Ok();
-                else
-                    NotFound();
+                MongoDataServices.GetInstance.DeleteData<User>("", id);
+                Ok();
+
             }
             catch (Exception)
             {

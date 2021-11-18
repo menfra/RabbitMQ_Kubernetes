@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DataAccess.Env;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -7,7 +8,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
-namespace DataAccess
+namespace DataAccess.DataServices
 {
     public class QueueServices : IQueueServices
     {

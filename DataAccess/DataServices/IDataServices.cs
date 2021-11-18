@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace DataAccess.DataServices
 {
     interface IDataServices
     {
@@ -31,7 +31,7 @@ namespace DataAccess
         /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        Task<T> UpdateData<T>(string table, T tdata);
+        void UpSertData<T>(string table, Guid guid, T tdata);
 
         /// <summary>
         /// Method Adds new data
@@ -40,7 +40,7 @@ namespace DataAccess
         /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        Task<T> AddData<T>(string table, T tdata);
+        void AddData<T>(string table, T tdata);
 
         /// <summary>
         /// Deletes table data
@@ -49,6 +49,6 @@ namespace DataAccess
         /// <param name="table"></param>
         /// <param name="guid"></param>
         /// <returns></returns>
-        Task<bool> DeleteData<T>(string table, Guid guid);
+        void DeleteData<T>(string table, Guid guid);
     }
 }
