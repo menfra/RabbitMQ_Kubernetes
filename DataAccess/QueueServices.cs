@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class QueueServices : IQueueServices
     {
-        private readonly string UriProtocol = "amqp://guest:guest@localhost:5672";
+        private readonly string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
 
         private static readonly QueueServices instance = null;
         public static QueueServices GetInstance
@@ -26,7 +26,7 @@ namespace DataAccess
         public T Consume<T>()
         {
             // Channel is created.
-            var channel = GetChannel(UriProtocol,Commons.MESSAGE_QUEUE);
+            var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
 
             // Instatiate a consumer to consume queue.
             var consumer = new EventingBasicConsumer(channel);
@@ -38,10 +38,8 @@ namespace DataAccess
                 if (e.Body.ToArray() == null)
                     return;
 
-                var bf = new BinaryFormatter();
-                using var ms = new MemoryStream(e.Body.ToArray());
-                var obj = bf.Deserialize(ms);
-                TModel = (T)obj;
+                var obj = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(e.Body.ToArray()));
+                //TModel = (T)obj;
             };
 
             channel.BasicConsume(Commons.MESSAGE_QUEUE, true, consumer);
@@ -68,11 +66,11 @@ namespace DataAccess
         {
             var connFactory = new ConnectionFactory()
             {
-                Uri = new Uri(UriProtocol)
+                Uri = new Uri(UriProtocol),
             };
 
-            using var connection = connFactory.CreateConnection();
-            using var channel = connection.CreateModel();
+            var connection = connFactory.CreateConnection();
+            var channel = connection.CreateModel();
 
             channel.QueueDeclare(queue: targetQueue, durable: true, exclusive: false, autoDelete: false, arguments: null);
 

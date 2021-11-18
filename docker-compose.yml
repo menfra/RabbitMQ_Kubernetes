@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+      rabbitmq:
+        container_name: rabbitmq
+        ports:
+          - 5672:5672
+          - 15672:15672
+        image: rabbitmq:3-management 
+
+      consumer:
+        container_name: consumer
+        ports:
+            - '8080:80'
+        image: 'menfra/consumer' 
+      producer:
+        container_name: producer
+        image: 'menfra/producer'

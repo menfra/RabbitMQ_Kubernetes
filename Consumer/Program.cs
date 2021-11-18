@@ -14,7 +14,6 @@ namespace Consumer
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            _ = new ConsumerWorker();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

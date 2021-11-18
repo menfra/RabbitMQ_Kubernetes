@@ -1,3 +1,4 @@
+using DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -44,6 +45,10 @@ namespace Consumer
                     },
                 });
             });
+
+            services.AddScoped<IQueueServices, QueueServices>();
+            // Here I start the consumer
+            services.RunRabbitMQConsumer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["Consumer/Consumer.csproj", "Consumer/"]
+COPY ["DataAccess/DataAccess.csproj", "DataAccess/"]
 RUN dotnet restore "Consumer/Consumer.csproj"
 COPY . .
 WORKDIR "/src/Consumer"

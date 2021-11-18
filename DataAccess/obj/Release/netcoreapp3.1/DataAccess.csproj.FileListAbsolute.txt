@@ -1,0 +1,10 @@
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\bin\Release\netcoreapp3.1\DataAccess.deps.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\bin\Release\netcoreapp3.1\DataAccess.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\bin\Release\netcoreapp3.1\DataAccess.pdb
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.csproj.AssemblyReference.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Release\netcoreapp3.1\DataAccess.pdb

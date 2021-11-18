@@ -36,7 +36,7 @@ namespace Consumer.Controllers
         /// </summary>
         /// <param name="id">The submitted user id</param>
         /// <returns>returns action result</returns>
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public async Task<User> GetById(Guid id)
         {
             try
@@ -95,7 +95,7 @@ namespace Consumer.Controllers
         /// </summary>
         /// <param name="user">The submitted user details</param>
         /// <returns>returns action result</returns>
-        [HttpDelete("deleteuser")]
+        [HttpDelete("deleteuser/{id}")]
         public async Task DeleteUser(Guid id)
         {
             try

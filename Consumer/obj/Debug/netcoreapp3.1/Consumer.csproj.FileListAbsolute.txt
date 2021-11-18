@@ -30,3 +30,34 @@ C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\Consum
 C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\Consumer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 C:\Users\menfra\Documents\Personal Projects\CashOnLedger\MSQueeKubernetes\Consumer\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.exe
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.deps.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.runtimeconfig.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.runtimeconfig.dev.json
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Consumer.pdb
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.csproj.AssemblyReference.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.AssemblyInfoInputs.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.AssemblyInfo.cs
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.csproj.CoreCompileInputs.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\staticwebassets\Consumer.StaticWebAssets.Manifest.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\staticwebassets\Consumer.StaticWebAssets.xml
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\scopedcss\bundle\Consumer.styles.css
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.RazorTargetAssemblyInfo.cache
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.dll
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.pdb
+C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\Consumer\obj\Debug\netcoreapp3.1\Consumer.genruntimeconfig.cache
