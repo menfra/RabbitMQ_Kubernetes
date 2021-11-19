@@ -80,7 +80,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                MongoDataServices.GetInstance.UpSertData("", Guid.NewGuid(), user);
+                await MongoDataServices.GetInstance.UpSertData("", Guid.NewGuid(), user);
                 return Created("User updated succesfully", user);
             }
             catch (Exception)

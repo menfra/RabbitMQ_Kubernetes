@@ -33,7 +33,7 @@ namespace DataAccess.DataServices
             db = client.GetDatabase(Commons.DBName);
         }
 
-        public async void DeleteData<T>(string table, Guid guid)
+        public async Task DeleteData<T>(string table, Guid guid)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", guid);
@@ -55,17 +55,17 @@ namespace DataAccess.DataServices
             return (await collection.FindAsync(filter)).FirstOrDefault();
         }
 
-        public void UpSertData<T>(string table, Guid guid, T tdata)
+        public async Task UpSertData<T>(string table, Guid guid, T tdata)
         {
             var collection = db.GetCollection<T>(table);
             var filter = Builders<T>.Filter.Eq("Id", guid);
-            collection.ReplaceOne(filter, tdata, new ReplaceOptions { IsUpsert = true });
+            await collection.ReplaceOneAsync(filter, tdata, new ReplaceOptions { IsUpsert = true });
         }
 
-        public void AddData<T>(string table, T tdata)
+        public async Task AddData<T>(string table, T tdata)
         {
             var collection = db.GetCollection<T>(table);
-            collection.InsertOne(tdata);
+            await collection.InsertOneAsync(tdata);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace DataAccess.DataServices
         /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        void UpSertData<T>(string table, Guid guid, T tdata);
+        Task UpSertData<T>(string table, Guid guid, T tdata);
 
         /// <summary>
         /// Method Adds new data
@@ -40,7 +40,7 @@ namespace DataAccess.DataServices
         /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        void AddData<T>(string table, T tdata);
+        Task AddData<T>(string table, T tdata);
 
         /// <summary>
         /// Deletes table data
@@ -49,6 +49,6 @@ namespace DataAccess.DataServices
         /// <param name="table"></param>
         /// <param name="guid"></param>
         /// <returns></returns>
-        void DeleteData<T>(string table, Guid guid);
+        Task DeleteData<T>(string table, Guid guid);
     }
 }
