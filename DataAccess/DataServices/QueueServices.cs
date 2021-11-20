@@ -1,12 +1,8 @@
 ﻿using DataAccess.Env;
-using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+using System.Text.Json;
 
 namespace DataAccess.DataServices
 {
@@ -39,8 +35,7 @@ namespace DataAccess.DataServices
                 if (e.Body.ToArray() == null)
                     return;
 
-                var obj = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(e.Body.ToArray()));
-                //TModel = (T)obj;
+                TModel = JsonSerializer.Deserialize<T>(e.Body.ToArray());
             };
 
             channel.BasicConsume(Commons.MESSAGE_QUEUE, true, consumer);
@@ -52,7 +47,7 @@ namespace DataAccess.DataServices
         public void Produce<T>(T tObject)
         {
             var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
-            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(tObject));
+            var body = JsonSerializer.SerializeToUtf8Bytes(tObject);
 
             //Message gets published
             channel.BasicPublish("", Commons.MESSAGE_QUEUE, null, body);
