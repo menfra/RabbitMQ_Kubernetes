@@ -1,5 +1,6 @@
 ﻿using DataAccess.DataModels;
 using DataAccess.DataServices;
+using DataAccess.Env;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await MongoDataServices.GetInstance.GetAllData<User>("");
+                return await MongoDataServices.GetInstance.GetAllData<User>(Commons.TBUSER);
             }
             catch (Exception)
             {
@@ -40,7 +41,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await MongoDataServices.GetInstance.GetDataByID<User>("", id);
+                return await MongoDataServices.GetInstance.GetDataByID<User>(Commons.TBUSER, id);
             }
             catch (Exception)
             {
@@ -59,7 +60,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                MongoDataServices.GetInstance.AddData("", user);
+                await MongoDataServices.GetInstance.AddData(Commons.TBUSER, user);
                 return Created("User created succesfully", user);
             }
             catch (Exception)
@@ -80,7 +81,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                await MongoDataServices.GetInstance.UpSertData("", Guid.NewGuid(), user);
+                await MongoDataServices.GetInstance.UpSertData(Commons.TBUSER, Guid.NewGuid(), user);
                 return Created("User updated succesfully", user);
             }
             catch (Exception)
@@ -101,7 +102,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                MongoDataServices.GetInstance.DeleteData<User>("", id);
+                await MongoDataServices.GetInstance.DeleteData<User>(Commons.TBUSER, id);
                 Ok();
 
             }

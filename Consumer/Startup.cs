@@ -28,9 +28,9 @@ namespace Consumer
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "MS Queue Test",
+                    Title = "Cash Sample API",
                     Version = "v1",
-                    Description = "A message queue test with RabbitMQ deployed on Kubertenetes",
+                    Description = "An API to display a message queue data for Kubertenetes",
                     Contact = new OpenApiContact
                     {
                         Name = "Producer",
@@ -41,6 +41,7 @@ namespace Consumer
             });
 
             services.AddScoped<IQueueServices, QueueServices>();
+
             // Here I start the consumer
             services.RunRabbitMQConsumer();
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccess.DataServices
 {
@@ -10,7 +11,7 @@ namespace DataAccess.DataServices
         /// This method consumes messages inside a queue.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        T Consume<T>();
+        void ConsumeAndSave<T>(string table);
 
         /// <summary>
         /// This method produces messages to a queue

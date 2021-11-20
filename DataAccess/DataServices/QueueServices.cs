@@ -3,6 +3,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace DataAccess.DataServices
 {
@@ -20,7 +21,7 @@ namespace DataAccess.DataServices
             }
         }
       
-        public T Consume<T>()
+        public void ConsumeAndSave<T>(string table)
         {
             // Channel is created.
             var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
@@ -29,18 +30,19 @@ namespace DataAccess.DataServices
             var consumer = new EventingBasicConsumer(channel);
             T TModel = default;
 
-            consumer.Received += (sender, e) =>
+            consumer.Received += async (sender, e) =>
             {
                 // check null for the event arg
                 if (e.Body.ToArray() == null)
                     return;
 
                 TModel = JsonSerializer.Deserialize<T>(e.Body.ToArray());
+
+                if (TModel != null)
+                    await MongoDataServices.GetInstance.AddData(table, TModel);
             };
 
             channel.BasicConsume(Commons.MESSAGE_QUEUE, true, consumer);
-
-            return TModel;
         }
 
        

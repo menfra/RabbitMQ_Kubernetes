@@ -3,7 +3,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.DataServices
@@ -23,12 +22,7 @@ namespace DataAccess.DataServices
 
         private MongoDataServices()
         {
-            //var client = new MongoClient(Util.ConnectionString);
-            var client = new MongoClient(new MongoClientSettings
-            {
-                Credential = new MongoCredential(Util.AuthMechanism, new MongoInternalIdentity(Util.DBName, Util.UserName), new PasswordEvidence(Util.PasswordEvidence)),
-                Server = new MongoServerAddress(Util.MongoServer, Util.MongoPort)
-            });
+            var client = new MongoClient(Util.ConnectionString);
 
             db = client.GetDatabase(Commons.DBName);
         }
