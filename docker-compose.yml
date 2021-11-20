@@ -6,13 +6,16 @@ services:
         ports:
           - 5672:5672
           - 15672:15672
-        image: rabbitmq:3-management 
+        image: rabbitmq:3-management
+        restart: always
 
       consumer:
         container_name: consumer
         ports:
             - '8080:80'
-        image: 'menfra/consumer' 
+        image: 'menfra/consumer'
+        restart: always
       producer:
         container_name: producer
         image: 'menfra/producer'
+        restart: always
