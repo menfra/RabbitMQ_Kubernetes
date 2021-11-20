@@ -7,23 +7,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using DataAccess.DataContext;
 
 namespace Producer
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly IServiceProvider _provider;
         private readonly Random random = new Random();
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, IServiceProvider provider)
         {
             _logger = logger;
+            _provider = provider;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
+                using var scope = _provider.CreateScope();
+                var db = scope.ServiceProvider.GetRequiredService<ProducerDataContext>();
+
                 // Make a user object
                 User user = new User()
                 {
@@ -33,8 +40,9 @@ namespace Producer
                     Occupation = "Producer"
                 };
 
-                //// Save the object to a db
-                //var results = await DataServices.GetInstance.AddData("", user);
+                // Save the object to a db
+                var results = await db.AddAsync(user);
+                //await PostgresDataServices.GetInstance.AddData("", user);
 
                 // send the object to a message queue for the other service to also use.
                 if (user != null)

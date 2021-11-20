@@ -10,7 +10,7 @@ namespace DataAccess.DataServices
     public class MongoDataServices : IDataServices
     {
         private static readonly MongoDataServices instance = null;
-        private IMongoDatabase db;
+        private readonly IMongoDatabase db;
         public static MongoDataServices GetInstance
         {
             get
@@ -22,7 +22,7 @@ namespace DataAccess.DataServices
 
         private MongoDataServices()
         {
-            var client = new MongoClient(Util.ConnectionString);
+            var client = new MongoClient(Util.MongoConnectionString);
 
             db = client.GetDatabase(Commons.DBName);
         }

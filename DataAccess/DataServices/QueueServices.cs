@@ -3,7 +3,6 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace DataAccess.DataServices
 {
