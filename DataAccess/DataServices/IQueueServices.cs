@@ -11,7 +11,7 @@ namespace DataAccess.DataServices
         /// This method consumes messages inside a queue.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        void ConsumeAndSave<T>(string table);
+        void ConsumeAndSave<T>();
 
         /// <summary>
         /// This method produces messages to a queue

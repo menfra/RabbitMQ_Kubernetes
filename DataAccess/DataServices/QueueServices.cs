@@ -22,7 +22,7 @@ namespace DataAccess.DataServices
             }
         }
       
-        public void ConsumeAndSave<T>(string table)
+        public void ConsumeAndSave<T>()
         {
             // Channel is created.
             var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
@@ -39,6 +39,7 @@ namespace DataAccess.DataServices
 
                 TModel = JsonSerializer.Deserialize<T>(e.Body.ToArray());
 
+                // Save a copy into the Mongo
                 if (TModel != null)
                     await MongoDataServices.GetInstance.AddData(TModel);
             };

@@ -11,7 +11,7 @@ namespace DataAccess.DataServices
     public class PostgresDataServices : IDataServices
     {
         private static readonly PostgresDataServices instance = null;
-        private readonly NpgsqlConnection conn = null;
+        //private readonly NpgsqlConnection conn = null;
         public static ProducerDataContext DBContext { get; set; }
 
         public static PostgresDataServices GetInstance
@@ -25,7 +25,7 @@ namespace DataAccess.DataServices
 
         private PostgresDataServices()
         {
-            conn = new NpgsqlConnection(Util.PostgresConnectionString);
+            //conn = new NpgsqlConnection(Util.PostgresConnectionString);
         }
 
         public async Task AddData<T>(T tdata)

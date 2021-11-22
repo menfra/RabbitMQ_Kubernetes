@@ -29,7 +29,7 @@ namespace Producer
             while (!stoppingToken.IsCancellationRequested)
             {
                 using var scope = _provider.CreateScope();
-                var db = scope.ServiceProvider.GetRequiredService<ProducerDataContext>();
+                var dbContext = scope.ServiceProvider.GetRequiredService<ProducerDataContext>();
 
                 // Make a user object
                 User user = new User()
@@ -41,7 +41,7 @@ namespace Producer
                 };
 
                 // Save the object to a db
-                PostgresDataServices.DBContext = db;
+                PostgresDataServices.DBContext = dbContext;
                 await PostgresDataServices.GetInstance.AddData(user);
 
                 // send the object to a message queue for the other service to also use.

@@ -8,6 +8,5 @@ namespace DataAccess.Env
     {
         public const string MESSAGE_QUEUE = "Top_Queue";
         public const string DBName = "cashsample";
-        public const string TBUSER = "User";
     }
 }

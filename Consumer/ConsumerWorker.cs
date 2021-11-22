@@ -17,7 +17,7 @@ namespace Consumer
             try
             {
                 IQueueServices queueServices = new QueueServices();
-                queueServices.ConsumeAndSave<User>(Commons.TBUSER);
+                queueServices.ConsumeAndSave<User>();
             }
             catch (Exception ex)
             {
