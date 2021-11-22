@@ -41,9 +41,8 @@ namespace Producer
                 };
 
                 // Save the object to a db
-                //var results = await db.AddAsync(user);
                 PostgresDataServices.DBContext = db;
-                await PostgresDataServices.GetInstance.AddData(/*"", */user);
+                await PostgresDataServices.GetInstance.AddData(user);
 
                 // send the object to a message queue for the other service to also use.
                 if (user != null)

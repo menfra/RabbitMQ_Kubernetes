@@ -1,5 +1,6 @@
 ﻿using DataAccess.DataContext;
 using DataAccess.Env;
+using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -30,11 +31,19 @@ namespace DataAccess.DataServices
         public async Task AddData<T>(T tdata)
         {
             await DBContext.AddAsync(tdata);
+            await DBContext.SaveChangesAsync();
         }
 
         public async Task DeleteData<T>(Guid guid)
         {
-            throw new NotImplementedException();
+            //var entityToDelete = await DBContext(guid);
+            //if (entityToDelete == null)
+            //{
+            //    return false;
+            //}
+            //var result = Delete(entityToDelete);
+
+            //return result;
         }
 
         public async Task<List<T>> GetAllData<T>()
@@ -49,7 +58,12 @@ namespace DataAccess.DataServices
 
         public async Task UpSertData<T>(Guid guid, T tdata)
         {
-            throw new NotImplementedException();
+            if (tdata == null)
+            {
+                return;
+            }
+            DBContext.Entry(tdata).State = EntityState.Modified;
+            await DBContext.SaveChangesAsync();
         }
     }
 }

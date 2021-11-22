@@ -40,7 +40,7 @@ namespace DataAccess.DataServices
                 TModel = JsonSerializer.Deserialize<T>(e.Body.ToArray());
 
                 if (TModel != null)
-                    await MongoDataServices.GetInstance.AddData(/*table, */TModel);
+                    await MongoDataServices.GetInstance.AddData(TModel);
             };
 
             channel.BasicConsume(Commons.MESSAGE_QUEUE, true, consumer);
