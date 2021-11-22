@@ -11,44 +11,39 @@ namespace DataAccess.DataServices
         /// Gets all data from DB
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
         /// <returns></returns>
-        Task<List<T>> GetAllData<T>(string table);
+        Task<List<T>> GetAllData<T>();
 
         /// <summary>
         /// Gets table data by ID
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
         /// <param name="guid"></param>
         /// <returns></returns>
-        Task<T> GetDataByID<T>(string table, Guid guid);
+        Task<T> GetDataByID<T>(Guid guid);
 
         /// <summary>
         /// Updates table data 
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        Task UpSertData<T>(string table, Guid guid, T tdata);
+        Task UpSertData<T>(Guid guid, T tdata);
 
         /// <summary>
         /// Method Adds new data
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
         /// <param name="tdata"></param>
         /// <returns></returns>
-        Task AddData<T>(string table, T tdata);
+        Task AddData<T>(T tdata);
 
         /// <summary>
         /// Deletes table data
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="table"></param>
         /// <param name="guid"></param>
         /// <returns></returns>
-        Task DeleteData<T>(string table, Guid guid);
+        Task DeleteData<T>(Guid guid);
     }
 }

@@ -8,7 +8,9 @@ namespace DataAccess.DataServices
 {
     public class QueueServices : IQueueServices
     {
-        private readonly string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
+        //private readonly string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
+        private readonly string UriProtocol = "amqp://guest:guest@localhost:5672";
+        //private readonly string UriProtocol = "amqp://guest:guest@rabbitmqservice:5672";
 
         private static readonly QueueServices instance = null;
         public static QueueServices GetInstance
@@ -38,7 +40,7 @@ namespace DataAccess.DataServices
                 TModel = JsonSerializer.Deserialize<T>(e.Body.ToArray());
 
                 if (TModel != null)
-                    await MongoDataServices.GetInstance.AddData(table, TModel);
+                    await MongoDataServices.GetInstance.AddData(/*table, */TModel);
             };
 
             channel.BasicConsume(Commons.MESSAGE_QUEUE, true, consumer);

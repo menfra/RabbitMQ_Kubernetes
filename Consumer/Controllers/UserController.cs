@@ -21,7 +21,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await MongoDataServices.GetInstance.GetAllData<User>(Commons.TBUSER);
+                return await MongoDataServices.GetInstance.GetAllData<User>();
             }
             catch (Exception)
             {
@@ -41,7 +41,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                return await MongoDataServices.GetInstance.GetDataByID<User>(Commons.TBUSER, id);
+                return await MongoDataServices.GetInstance.GetDataByID<User>(id);
             }
             catch (Exception)
             {
@@ -60,7 +60,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                await MongoDataServices.GetInstance.AddData(Commons.TBUSER, user);
+                await MongoDataServices.GetInstance.AddData(user);
                 return Created("User created succesfully", user);
             }
             catch (Exception)
@@ -81,7 +81,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                await MongoDataServices.GetInstance.UpSertData(Commons.TBUSER, Guid.NewGuid(), user);
+                await MongoDataServices.GetInstance.UpSertData(Guid.NewGuid(), user);
                 return Created("User updated succesfully", user);
             }
             catch (Exception)
@@ -102,7 +102,7 @@ namespace Consumer.Controllers
         {
             try
             {
-                await MongoDataServices.GetInstance.DeleteData<User>(Commons.TBUSER, id);
+                await MongoDataServices.GetInstance.DeleteData<User>(id);
                 Ok();
 
             }

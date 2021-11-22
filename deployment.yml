@@ -7,15 +7,14 @@ spec:
   selector:
     app: rabbitmq
   ports:
-    - name: container
+    - name: amqp
       protocol: TCP
-      port: 80
+      port: 5672
       targetPort: 5672
-    - name: management
+    - name: http
       protocol: TCP
-      port: 443
+      port: 32001
       targetPort: 15672
-      nodePort: 30001
   type: LoadBalancer
  
  
@@ -55,11 +54,9 @@ spec:
   ports:
     - protocol: "TCP"
       # Port accessible inside cluster
-      port: 8081
+      port: 8080
       # Port to forward to inside the pod
-      targetPort: 8080
-      # Port accessible outside cluster
-      nodePort: 30002
+      targetPort: 80
   type: LoadBalancer
  
 
@@ -87,8 +84,8 @@ spec:
         ports:
         - containerPort: 80
  
-            
-            
+ 
+  
 ---
 kind: Service
 apiVersion: v1
@@ -96,17 +93,14 @@ metadata:
   name: producerservice
 spec:
   selector:
-    app: myapp
+    app: producer
   ports:
     - protocol: "TCP"
       # Port accessible inside cluster
-      port: 8081
+      port: 32003
       # Port to forward to inside the pod
-      targetPort: 8080
-      # Port accessible outside cluster
-      nodePort: 30003
+      targetPort: 8001
   type: LoadBalancer
- 
 
 
 ---
@@ -131,4 +125,5 @@ spec:
       - name: producer
         image: menfra/producer
         ports: 
+        - containerPort: 8001
  
