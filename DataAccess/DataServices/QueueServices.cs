@@ -8,10 +8,6 @@ namespace DataAccess.DataServices
 {
     public class QueueServices : IQueueServices
     {
-        //private readonly string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
-        private readonly string UriProtocol = "amqp://guest:guest@localhost:5672";
-        //private readonly string UriProtocol = "amqp://guest:guest@rabbitmqservice:5672";
-
         private static readonly QueueServices instance = null;
         public static QueueServices GetInstance
         {
@@ -25,7 +21,7 @@ namespace DataAccess.DataServices
         public void ConsumeAndSave<T>()
         {
             // Channel is created.
-            var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
+            var channel = GetChannel(Util.UriProtocol, Commons.MESSAGE_QUEUE);
 
             // Instatiate a consumer to consume queue.
             var consumer = new EventingBasicConsumer(channel);
