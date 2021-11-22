@@ -46,7 +46,7 @@ namespace DataAccess.DataServices
        
         public void Produce<T>(T tObject)
         {
-            var channel = GetChannel(UriProtocol, Commons.MESSAGE_QUEUE);
+            var channel = GetChannel(Util.UriProtocol, Commons.MESSAGE_QUEUE);
             var body = JsonSerializer.SerializeToUtf8Bytes(tObject);
 
             //Message gets published
