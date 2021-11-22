@@ -19,4 +19,3 @@ C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Debug\netcore
 C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.genruntimeconfig.cache
-C:\Users\FrankMensah\Desktop\PP\RabbitMQ_Kubernetes\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.AssemblyReference.cache

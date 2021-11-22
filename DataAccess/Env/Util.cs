@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DataAccess.Env
 {
+    /// <summary>
+    /// All could come from a config
+    /// </summary>
     public static class Util
     {
         public static string MongoConnectionString = "mongodb+srv://cashsample:P%2355w0rd@cashsample.wzori.mongodb.net/cashsample?retryWrites=true&w=majority";
