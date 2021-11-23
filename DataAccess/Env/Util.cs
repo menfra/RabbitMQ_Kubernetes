@@ -20,14 +20,10 @@ namespace DataAccess.Env
             $"Database=d638oav37cno5j;" +
             $"Pooling=true;SSL Mode=Require;TrustServerCertificate=True;";
 
-        public static string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
+        //public static string UriProtocol = "amqp://guest:guest@host.docker.internal:5672";
         //public static string UriProtocol = "amqp://guest:guest@localhost:5672";
-        //public static string UriProtocol = "amqp://guest:guest@rabbitmqservice:5672";
+        public static string UriProtocol = "amqp://guest:guest@rabbitmqservice:5672";
 
-        //public static void GetEnvironmentValues()
-        //{
-        //    //MongoConnectionString = "";
-        //    //PostgresConnectionString = "";
-        //}
+
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.DataModels
 {
-    class GasNetWork : INetWork
+    public class GasNetWork : INetWork
     {
 
         [BsonId]

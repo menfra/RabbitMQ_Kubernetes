@@ -26,30 +26,39 @@ namespace Producer
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            try
             {
-                using var scope = _provider.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<ProducerDataContext>();
-
-                // Make a user object
-                User user = new User()
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    Name = $"{nameof(Worker)}_{RandomString(8)}",
-                    DisplayName = nameof(Worker),
-                    Age = DateTime.Now.Second.ToString(),
-                    Occupation = "Producer"
-                };
+                    using var scope = _provider.CreateScope();
+                    var dbContext = scope.ServiceProvider.GetRequiredService<ProducerDataContext>();
 
-                // Save the object to a db
-                PostgresDataServices.DBContext = dbContext;
-                await PostgresDataServices.GetInstance.AddData(user);
+                    // Make a user object
+                    User user = new User()
+                    {
+                        Name = $"{nameof(Worker)}_{RandomString(8)}",
+                        DisplayName = nameof(Worker),
+                        Age = DateTime.Now.Second.ToString(),
+                        Occupation = "Producer"
+                    };
 
-                // send the object to a message queue for the other service to also use.
-                if (user != null)
-                    QueueServices.GetInstance.Produce(user);
+                    // Save the object to a db
+                    PostgresDataServices.DBContext = dbContext;
+                    await PostgresDataServices.GetInstance.AddData(user);
 
-                await Task.Delay(1000, stoppingToken);
+                    // send the object to a message queue for the other service to also use.
+                    if (user != null)
+                        QueueServices.GetInstance.Produce(user);
+
+                    await Task.Delay(1000, stoppingToken);
+                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public string RandomString(int length)
